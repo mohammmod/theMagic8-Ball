@@ -16,11 +16,6 @@ public class Templating {
     private SentencesProcessor sentencesProcessor;
 
     @GetMapping
-    String sayHelloWorld(){
-        return "helloWorld";
-    }
-
-    @GetMapping("/magic8ball")
     String sayOneSentence(Model model){
         String randomSentence = sentencesProcessor.giveOneSentence();
         model.addAttribute("sentence",randomSentence);
